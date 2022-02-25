@@ -1,0 +1,72 @@
+<?php include('header.php'); ?>
+
+
+<link rel="stylesheet" href="css1/all.css">	
+<script src="scripts/datepicker.js"></script>
+
+<style type="text/css">
+		.ui-highlight .ui-state-default{
+			background: red !important;
+			border-color: red !important;
+			color: white !important;
+		}
+</style>
+
+<div class="top-head">
+	<div class="link_detail">
+		<span><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a> / User Report</span>
+	</div>
+</div>
+
+    <div>
+		
+		<h4 class="heading"><strong><i class="fa fa-list"></i> &nbsp; User IP</strong> Report <span></span></h4>
+		<div class="main">
+			
+			<div class="form_main">
+				<form class="form-horizontal" action="#" target="_blank" method="get" id="contactFrm" name="contactFrm" enctype="multipart/form-data">
+					<div class="form-group">
+						<div class="col-sm-3 col-xs-8 col-md-offset-3">
+							<input type="text" required="" id="datepicker" placeholder="Select Date" name="select_date" class="txt">
+						</div>
+						<div class="col-sm-2">
+							<input type="submit" value="submit" name="submit" style="padding: 8px 20px;">
+						</div>
+					</div>
+				</form>
+				<hr/>
+			</div><div class="clearfix"></div>
+			
+			<div id="result" style="overflow-x:auto;">
+				<table id="example" class="table table-striped table-bordered table-responsive" >
+					<thead>
+						<tr>
+							<th>Sr.</th>
+							<th>IP</th>
+							<th>Location</th>
+							<th>Hits</th>
+							<th>Date</th>
+							<th>Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+							
+							<tr>
+								<th>Sr.</th>
+								<th>IP</th>
+								<th>Location</th>
+								<th>Hits</th>
+								<th>Date</th>
+								<th>Time</th>
+							</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<a class="btn btn-warning" href="#"><span class="rows_selected">Download Questions</a>
+			
+		</div>
+	</div>
+<script>
+<?php include('footer.php'); ?>

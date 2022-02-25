@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title> HOME | ICAI </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Dynamic -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+        <!-- Static Content -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+        <!-- Dynamic -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    </head>
+<!--<body style="background:url(images/bg.jpg)no-repeat center center fixed; background-size: 100% 100%;">-->
+<body>
+<div class="col-12">
+	<div class="row header">
+		<div class="col-lg-2 col-md-2 co-xs-12 co-sm-12"><img src="{% static 'images/logo.png' %}" width="70%" class="img-fluid"></div>
+		<div class="col-lg-10 col-md-10 co-xs-12 co-sm-12">
+			<h3>Demo</h3>
+			<p>Date</p>
+		</div>
+	</div>
+</div>
+
+<div class="col-12 co-xs-12 co-sm-12">
+	<div class="wrap-login100 col-lg-4 col-md-4 co-xs-12 co-sm-12 offset-md-4 float-left" style="margin-top:20px;border: 2px solid #152B7B;">
+
+		<form action="live" method="post" class="login100-form validate-form" onSubmit="return validation(this)">
+            {% csrf_token %}
+			<span class="login100-form-title"> Registration </span>
+
+            <div class="wrap-input100 validate-input" data-validate="Region is required">
+				<select name="region" id="region" class="input100">
+					<option value="" disabled selected>Please Select Region</option>
+					<option value="NIRC">NIRC</option>
+					<option value="CIRC">CIRC</option>
+					<option value="WIRC">WIRC</option>
+					<option value="SIRC">SIRC</option>
+					<option value="EIRC">EIRC</option>
+				</select>
+				<label id="error_region" align="center" style="color:red;" class="error">
+			</div>
+
+            <div class="wrap-input100 validate-input" data-validate="Username is required">
+				<input class="input100" type="text" id="member_ship_no" name="member_ship_no" placeholder="Enter Membership No*" onkeyup="if(/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" >
+				<label id="error_member_ship_no" align="center" style="color:red;" class="error">
+			</div>
+
+            <!--<div class="wrap-input100 validate-input" data-validate="Password is required">
+				<input class="input100" id="datepicker" type="text" name="DOB" placeholder="Select Birth Date(eg. dd/mm/yyyy)*" value="" required>
+			</div>-->
+
+            <div class="wrap-input100 validate-input" data-validate="Username is required">
+				<input class="input100" type="text" id="name" name="name" placeholder="Enter Your Name*" >
+				<label id="error_name" align="center" style="color:red;" class="error">
+			</div>
+
+            <div class="wrap-input100 validate-input" data-validate="Email-ID is required">
+				<input class="input100" type="text" id="email" name="email" placeholder="Enter Your Email ID*" >
+				<label id="error_email" align="center" style="color:red;" class="error">
+			</div>
+
+            <div class="wrap-input100 validate-input" data-validate="Username is required">
+				<input class="input100" type="text" id="mobile" name="mobile" placeholder="Enter Your Phone*" >
+				<label id="error_mobile" align="center" style="color:red;" class="error">
+			</div>
+
+			<div class="container-login100-form-btn">
+				<div class="wrap-login100-form-btn">
+					<div class="login100-form-bgbtn"></div>
+					<button class="login100-form-btn" name="login">View</button>
+				</div>
+			</div>
+
+            <p style="color:#337AB7">No username and password required to join the same, please view after filling above-mentioned registration form.</p>
+			<!--<p style="color:#337AB7">If You have Already Registered <a href="login.php">Click Here for Login.</a></p>-->
+
+		</form>
+	</div>
+</div>
+
+</body>
+<script>
+	$('#datepicker').datepicker({
+		uiLibrary: 'bootstrap4',
+		format: 'dd/mm/yyyy'
+	});
+</script>
+</html>

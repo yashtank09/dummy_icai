@@ -1,0 +1,79 @@
+
+</div><!--- Contain Main --->
+</body>
+
+
+<!--- Clock Picker --->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-clockpicker.min.css">
+<script type="text/javascript" src="js/bootstrap-clockpicker.min.js"></script>
+
+<!--- Date Picker ---
+<link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker3.css">
+<script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datepicker.es.min.js"></script>
+<script>
+/********* Clock Picker *********/
+var input1 = $('#input-12-hour');
+input1.clockpicker({
+	twelvehour: true,
+	donetext: 'Done'
+});
+
+/********* Date Picker *********/
+
+$(function () {
+	$('#datetimepicker1').datepicker({
+		format: "dd-mm-yyyy",
+		autoclose: true,
+		todayHighlight: true
+	});
+});
+</script>-->
+<script>
+
+// select all checkbox
+$('#select_all').on('click', function(e) {
+	if($(this).is(':checked',true)) {
+		$(".chk_act").prop('checked', true);
+	}
+	else {
+		$(".chk_act").prop('checked',false);
+	}
+	// set all checked checkbox count
+	$("#select_count").html($("input.chk_act:checked").length+" Selected | ");
+});
+
+// set particular checked checkbox count
+$(".chk_act").on('click', function(e) {
+	$("#select_count").html($("input.chk_act:checked").length+" Selected | ");
+});
+
+</script>
+
+<script>  
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+		"pageLength": 200,
+		"lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+    } );
+} );
+</script>
+
+<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="css/buttons.dataTables.min.css">
+<!--<script src="js/jquery-1.12.4.js"></script>-->
+<script src="js/jquery.dataTables.min.js"></script> 
+<script src="js/dataTables.bootstrap.min.js"></script>
+<script src="js/dataTables.editor.min.js"></script> 
+<script src="js/dataTables.select.min.js"></script> 
+<script src="js/dataTables.buttons.min.js"></script> 
+<script src="js/jszip.min.js"></script> 
+<script src="js/pdfmake.min.js"></script> 
+<script src="js/vfs_fonts.js"></script> 
+<script src="js/buttons.html5.min.js"></script> 
+<script src="js/buttons.print.min.js"></script> 
+</html>

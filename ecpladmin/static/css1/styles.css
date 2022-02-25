@@ -1,0 +1,219 @@
+@charset "utf-8";
+* {
+	margin:0;
+	padding:0
+} 
+
+p
+{
+	font-size:16px;
+	font-weight:bold;
+	color:#0033FF;
+}
+
+.error
+{
+	color:#FF0000;
+}
+
+/* presentation width and height. define as necessary for custom skins */
+.presoWidth {width:1253px;}
+.presoHeight {height:653px;}
+.presoClip {clip:rect(0px,1253px,653px,0px);}
+
+/* main body styles. background color of the skin. bg image overrides color. */
+body {
+	margin:0px;
+	padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:.8em;
+	color:#000000;
+	background: #f5f5f5 url(../img/cross-pattern.png) repeat top center;
+	
+}
+
+/* global link styles */
+a:link, a:visited {color:#000000;text-decoration:none;}
+a:hover, a:active {color:#0000FF;text-decoration:underline;}
+
+.clearBoth {clear:both;}
+
+/* use pageOuter/pageInner to absolutely position containing element to middle. */
+#pageOuter{height:100%;width:100%;display:table;vertical-align:middle;}
+/* define height of containing element to acheive vertical align. */
+#pageInner {position:relative;vertical-align:middle;display:table-cell;padding-left:0px;}
+/* bgOuter is background element of the skin that gets absolutely positioned to center of page. */
+#bgOuter {position:relative;margin-left:auto;margin-right:auto;}
+/* apply a blue border for fullscreen mode */
+#bgInner {position:absolute;top:90px;margin:0px auto;/*min-width:320px;*/}
+
+
+
+/* header elements */
+#header {height:90px;position:absolute;z-index:50;top:0px;left:0px;overflow:auto;}
+#logo 
+{
+	height:90px;overflow:hidden;position:absolute;z-index:20;left:0px;top:0px;background-image:url(images/bgimg.jpg);
+	border-top-left-radius: 10px;-moz-border-top-left-radius: 10px;-webkit-border-top-left-radius: 10px;
+	border-top-right-radius: 10px;-moz-border-top-right-radius: 10px;-webkit-border-top-right-radius: 10px;
+	border-bottom:2px solid #666666;
+	background-color:#F3F3F3;
+}
+
+
+#maincontent
+{
+	background-image:url(images/bgimg.jpg);position: relative;border-left:2px solid #666666;border-bottom:2px solid #666666;border-right:2px solid #666666;
+	border-bottom-left-radius: 10px;-moz-border-bottom-left-radius: 10px;-webkit-border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;-moz-border-bottom-right-radius: 10px;-webkit-border-bottom-right-radius: 10px;
+    box-shadow:0 2px 2px rgba(0,0,0, .5);
+    -moz-box-shadow:0 2px 2px rgba(0,0,0, .5);
+    -webkit-box-shadow:0 2px 2px rgba(0,0,0, .5);min-height:550px;	
+}
+
+.ppt{
+	position:absolute;
+	left: 200px;
+	top: 5px;
+	width: 1053px;
+	height: 90px;
+	text-align:center;
+}
+
+.tablestyle
+{
+	position: relative;border:3px solid #666666;background-color:#FFFFFF;
+	border-radius:10px;
+    	-moz-border-radius:10px;
+    	-webkit-border-radius:10px;
+    	box-shadow:0 2px 2px rgba(0,0,0, 1.5);
+    	-moz-box-shadow:0 2px 2px rgba(0,0,0, 1.5);
+    	-webkit-box-shadow:0 2px 2px rgba(0,0,0, 1.5);
+}
+
+#adminmenu
+{
+	list-style:none;
+	width:150px;
+}
+#adminmenu li
+{
+	padding:10px;
+	width:200px;
+	
+}
+#adminmenu li a
+{
+	background-color:#0099FF;
+	padding:5px;
+	font-weight:bold;
+	font-size:14px;
+	border-radius: 5px;
+	color:#EEEEEE;
+}
+
+#adminmenu li a:hover
+{
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+
+<!-- TABLE CODE -->
+table.pg {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border:1px solid ; 
+	border-color: #3C6C75;
+	border-collapse:collapse;
+	
+}
+table.pg th {
+	background-color:#239ba5;
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #a9c6c9;
+	text-align:center;
+	color:#FFF;
+	border-collapse:collapse;
+	 
+}
+table.pg tr {
+	background-color:#d4e3e5;
+}
+table.pg tr:hover {
+	background-color:#FFFFD7;
+}
+table.pg td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #a9c6c9;
+	border-collapse:collapse;
+}
+ 
+.pg .edit  {
+	 padding:5px 5px 5px 20px;
+	 height:25px;
+	 background:url(images/mytable1_edit.png) left top no-repeat;
+}
+.pg .delete  {
+	 padding:5px 5px 5px 20px;
+	 height:25px;
+	 background:url(images/mytable1_delete.png) left top no-repeat;
+}
+.pg .detail  {
+	 padding:5px 5px 5px 20px;
+	 height:25px;
+	 background:url(images/mytable1_detail.png) left top no-repeat;
+}
+table.pg tfoot tr td {
+	background-color:#239ba5;
+	padding:2px;
+	color:#FFF;
+} 
+
+
+.button 
+{ 
+	background: #DD3D00; 
+	border: 0px; 
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	font-style:normal;
+	color: #FFFFFF;
+	font-size:12px;
+	padding: 3px 5px 3px 5px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+
+.button:hover
+{ 
+	color:#000000; 
+	text-shadow: 0px 0px 2px #DD3D00; 
+}
+
+
+button 
+{ 
+	background: #DD3D00; 
+	border: 0px; 
+	font-family:Verdana, Arial, Helvetica, sans-serif; 
+	font-style:normal;
+	color: #FFFFFF;
+	font-size:12px;
+	padding: 3px 5px 3px 5px;
+	width: 75px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+
+button:hover
+{ 
+	color:#000000; 
+	text-shadow: 0px 0px 2px #DD3D00; 
+}

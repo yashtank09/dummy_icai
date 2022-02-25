@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Session is Over</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Static Content -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- Dynamic -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+</head>
+<!--<body style="background:url(images/bg.jpg)no-repeat center center fixed; background-size: 100% 100%;">-->
+<body>
+
+<div class="col-12">
+	<div class="row header">
+		<div class="col-lg-2 col-md-2 co-xs-12 co-sm-12"><img src="{% static 'images/logo.png' %}" width="70%" class="img-fluid"></div>
+		<div class="col-lg-10 col-md-10 co-xs-12 co-sm-12">
+			<h3>Demo</h3>
+			<p>Date</p>
+		</div>
+	</div>
+</div>
+
+<div class="col-12 co-xs-12 co-sm-12">
+	<div class="wrap-login100 col-lg-6 col-md-6 co-xs-12 co-sm-12 offset-md-3 float-left" style="margin-top:20px;margin-bottom:-35px;border: 2px solid #152B7B;">
+		<form action="#" method="post" class="login100-form validate-form" onSubmit="return validation(this)">
+			<span class="login100-form-title" style="color:red;"> Webcast is over </span>
+			
+		</form>
+	</div>
+</div>
+
+</body>
+<script>
+	$('#datepicker').datepicker({
+		uiLibrary: 'bootstrap4',
+		format: 'dd/mm/yyyy'
+	});
+</script>
+</html>
+

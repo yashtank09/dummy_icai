@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'demoicai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'demoicai',
+        'NAME': 'demoicai1',
         'USER': 'root',
         'PASSWORD': 'toor',
         'HOST': 'localhost',

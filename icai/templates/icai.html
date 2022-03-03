@@ -35,12 +35,12 @@
 <div class="col-12 co-xs-12 co-sm-12">
 	<div class="wrap-login100 col-lg-4 col-md-4 co-xs-12 co-sm-12 offset-md-4 float-left" style="margin-top:20px;border: 2px solid #152B7B;">
 
-		<form action="live" method="post" class="login100-form validate-form" onSubmit="return validation(this)">
+		<form action="" method="POST" class="login100-form validate-form" onSubmit="return validation(this)">
             {% csrf_token %}
 			<span class="login100-form-title"> Registration </span>
 
             <div class="wrap-input100 validate-input" data-validate="Region is required">
-				<select name="usericai_region" id="region" class="input100">
+				<select name="usericai_region" id="region" class="input100" required>
 					<option value="" disabled selected>Please Select Region</option>
 					<option value="NIRC">NIRC</option>
 					<option value="CIRC">CIRC</option>
@@ -52,7 +52,7 @@
 			</div>
 
             <div class="wrap-input100 validate-input" data-validate="Username is required">
-				<input class="input100" type="text" id="member_ship_no" name="membershipicai_id" placeholder="Enter Membership No*" onkeyup="if(/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" >
+				<input class="input100" type="text" id="member_ship_no" name="membershipicai_id" placeholder="Enter Membership No*" onkeyup="if(/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
 				<label id="error_member_ship_no" align="center" style="color:red;" class="error">
 			</div>
 
@@ -61,17 +61,17 @@
 			</div>-->
 
             <div class="wrap-input100 validate-input" data-validate="Username is required">
-				<input class="input100" type="text" id="name" name="username_icai" placeholder="Enter Your Name*" >
+				<input class="input100" type="text" id="name" name="username_icai" placeholder="Enter Your Name*" required>
 				<label id="error_name" align="center" style="color:red;" class="error">
 			</div>
 
             <div class="wrap-input100 validate-input" data-validate="Email-ID is required">
-				<input class="input100" type="text" id="email" name="user_email_icai" placeholder="Enter Your Email ID*" >
+				<input class="input100" type="text" id="email" name="user_email_icai" placeholder="Enter Your Email ID*" required>
 				<label id="error_email" align="center" style="color:red;" class="error">
 			</div>
 
             <div class="wrap-input100 validate-input" data-validate="Username is required">
-				<input class="input100" type="text" id="mobile" name="user_contact_icai" placeholder="Enter Your Phone*" >
+				<input class="input100" type="text" id="mobile" name="user_contact_icai" placeholder="Enter Your Phone*" required>
 				<label id="error_mobile" align="center" style="color:red;" class="error">
 			</div>
 

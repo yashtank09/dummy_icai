@@ -17,29 +17,44 @@ def home(req):
 
 def home(req):
     userRegisterID = random.randint(10000, 99999)
-
-    # if req.method == 'POST':
-    #     obj = icai_registration.objects.all()
-    #     obj.save()
-    #     return redirect('/golive')
-    # else:
-    #     return render(req, 'icai.html')
     if req.method == 'POST':
-        if req.POST.get('usericai_region') and req.POST.get('membershipicai_id') and req.POST.get(
-                'username_icai') and req.POST.get('user_email_icai') and req.POST.get('user_contact_icai'):
-            saverec = icai_registration()
-            saverec.register_id = userRegisterID
-            saverec.usericai_region = req.POST.get('usericai_region')
-            saverec.membershipicai_id = req.POST.get('membershipicai_id')
-            saverec.username_icai = req.POST.get('username_icai')
-            saverec.user_email_icai = req.POST.get('user_email_icai')
-            saverec.user_contact_icai = req.POST.get('user_contact_icai')
-            saverec.save()
+        # objects for fetching data from input fields using their `name` attributes
+        UserRegion = req.POST['usericai_region']
+        MembershipID = req.POST['membershipicai_id']
+        UserName = req.POST['username_icai']
+        UserEmailID = req.POST['user_email_icai']
+        UserContactNo = req.POST['user_contact_icai']
+
+        # if all objects will get values then save data to our database
+        if UserRegion and MembershipID and UserName and UserEmailID and UserContactNo:
+            # This is database object
+            RegiDataSave = icai_registration()
+
+            # Add database object values to database
+            RegiDataSave.register_id = userRegisterID
+            RegiDataSave.usericai_region = UserRegion
+            RegiDataSave.membershipicai_id = MembershipID
+            RegiDataSave.username_icai = UserName
+            RegiDataSave.user_email_icai = UserEmailID
+            RegiDataSave.user_contact_icai = UserContactNo
+            # Save data to Database
+            RegiDataSave.save()
+
+            # after successfully data saved it redirects to below page
             return redirect('/golive')
-            # return render(req, 'index.html')
-        # else:
-        #     return render(req, 'index.html')
-    return render(req, 'icai.html')
+    else:
+        # if request method dose not match it will return 'icai.html'/ Same Page
+        return render(req, 'icai.html')
+
+
+def sessionlive(livereq):
+    icai_registration.objects.get(register_id=livereq.session['userid'], username_icai=livereq.session['username'])
+    if livereq.session.has_key('userid'):
+        print(livereq.session.get('userid'))
+        print(livereq.session.get('username'))
+        return render(livereq, 'webcast.html')
+    else:
+        return render(livereq, 'icai.html')
 
 
 def login(req):
@@ -50,22 +65,16 @@ def over(req):
     return render(req, 'over.html')
 
 
-def sessionlive(livereq):
-    return render(livereq, 'webcast.html')
-    # if livereq:
-    #     return render(livereq, 'icai.html')
-    # else:
-    #     return render(livereq, 'webcast.html')
-
-
 # no reload question sent by user and data will be recorded to database
 def qus_send(request):
     if request.method == 'POST':
         if request.POST.get('user_question'):
             savestudentques = student_questions()
-            savestudentques.qus_id  # = requests.POST('qus_id')
+            savestudentques.qus_id
+            savestudentques.username = request.session.get('username')
             savestudentques.user_question = request.POST.get('user_question')
-            savestudentques.question_datetime  # = requests.POST('question_datetime')
+            savestudentques.question_datetime
+            savestudentques.UserRegID = request.session.get('userid')
             savestudentques.save()
             success = 'Question Sended.'
             return HttpResponse(success)
